@@ -1,10 +1,10 @@
 public class Main {
     public static void main(String[] args) {
-        new Produkt("Produkt 1");
+        Produkt p1 = new Produkt();
         System.out.println("Liczba produktów: " + Produkt.liczbaProduktow);
-        new Produkt("Produkt 2");
+        Produkt p2 = new Produkt();
         System.out.println("Liczba produktów: " + Produkt.liczbaProduktow);
-        new Produkt("Produkt 3");
+        Produkt p3 = new Produkt();
         System.out.println("Liczba produktów: " + Produkt.liczbaProduktow);
         Singleton singleton1 = Singleton.getInstance();
         Singleton singleton2 = Singleton.getInstance();

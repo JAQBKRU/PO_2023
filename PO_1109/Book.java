@@ -7,7 +7,7 @@ public class Book {
         if(numberOfPages < 0) this.numberOfPages = 1;
         else this.numberOfPages = numberOfPages;
 
-        if(title != null && title != "" && author != null && author != ""){
+        if(title != null && !title.isEmpty() && author != null && !author.isEmpty()){
             this.title = title;
             this.author = author;
         }else{
@@ -24,9 +24,7 @@ public class Book {
     @Override
     public boolean equals(Object other){
         if(other instanceof Book o){
-            if(this.title.equals(o.title) && this.author.equals(o.author) && this.numberOfPages == o.numberOfPages) {
-                return true;
-            }
+            return this.title.equals(o.title) && this.author.equals(o.author) && this.numberOfPages == o.numberOfPages;
         }
         return false;
     }

@@ -5,5 +5,13 @@ public class Istota {
 }
 
 class Czlowiek extends Istota{
+    public Czlowiek(){
+        System.out.println("Instancja czlowieka");
+    }
+}
 
+class Programista extends Czlowiek{
+    public Programista(){
+        System.out.println("Instancja programisty");
+    }
 }

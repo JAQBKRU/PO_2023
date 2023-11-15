@@ -37,6 +37,8 @@ public class Main {
 
         //Zadanie 4
         //Stwórz klasę Tool z chronionym konstruktorem, który przyjmuje nazwę narzędzia. Następnie stwórz klasę potomną Hammer, która dziedziczy po klasie Tool. W klasie Hammer stwórz konstruktor, który korzysta z konstruktora klasy bazowej. Zastanów się, dlaczego używając modyfikatora private dla konstruktora klasy bazowej, taki scenariusz nie byłby możliwy.
+        Hammer hammer = new Hammer("Mlot");
+        System.out.println("Nazwa narzedzia: " + hammer.nazwa);
 
         //Zadanie 5
         //Wykonaj kolejno poniższe czynności:
@@ -50,7 +52,9 @@ public class Main {
         //Zadanie 6
         //Stwórz klasę Kalkulator z metodą dodaj, która przyjmuje dwa argumenty typu int i zwraca ich sumę. Następnie stwórz klasę potomną KalkulatorRozszerzony, która przesłania metodę dodaj w taki sposób, by przyjmowała trzy argumenty typu int i zwracała ich sumę. Zastanów się, czy to faktycznie przesłanianie metody, czy może coś innego.
         KalkulatorRozszerzony kR = new KalkulatorRozszerzony();
-        System.out.println(kR.dodaj(1, 2, 3));// ???
+        KalkulatorRozszerzony kal = new KalkulatorRozszerzony();
+        System.out.println(kal.dodaj(3, 2));//5
+        System.out.println(kR.dodaj(1, 2, 3));//6
 
         //Zadanie 7
         //Stwórz klasę bazową Komputer z publiczną metodą uruchom, która wypisuje “Komputer uruchomiony”. Stwórz klasę potomną Laptop, która próbuje przesłonić metodę uruchom, ale z modyfikatorem dostępu protected. Spróbuj skompilować kod i zastanów się, dlaczego występują pewne ograniczenia w przesłanianiu metod pod względem modyfikatorów dostępu.
@@ -59,5 +63,6 @@ public class Main {
 
         //Zadanie 8
         //Stwórz trzy klasy: Istota, Człowiek i Programista. Klasa Człowiek powinna dziedziczyć po klasie Istota, a klasa Programista po klasie Człowiek. W każdej z klas dodaj konstruktor, który wypisuje informację o tworzeniu instancji danej klasy. Stwórz instancję klasy Programista i zaobserwuj kolejność wywoływania konstruktorów.
+        Programista programista = new Programista();
     }
 }

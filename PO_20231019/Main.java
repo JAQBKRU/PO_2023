@@ -1,5 +1,4 @@
 //Zadanie z 20231019
-
 public class Main {
     public static void main(String[] args) {
         //Zad 1 - testowe

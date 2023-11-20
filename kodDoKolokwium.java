@@ -228,3 +228,111 @@ import java.util.List;
             System.out.println(arr.get(arr.size()-i-1));
         }
     }
+
+
+
+
+
+
+
+
+//dwa konstruktory - jeden domyślny, który nie przyjmuje żadnych argumentów,
+//i drugi, który przyjmuje trzy argumenty odpowiadające polom klasy.
+public class Ksiazka {
+    public String tytul;
+    public String autor;
+    public int rokWydania;
+
+    //constructor - default param
+    public Ksiazka(){
+        tytul = "default";
+        autor = "default";
+        rokWydania = 2023;
+    }
+
+    public Ksiazka(String tytul, String autor, int rokWydania){
+        this.tytul = tytul;
+        this.autor = autor;
+        this.rokWydania = rokWydania;
+    }
+}
+//run in main.java
+        Ksiazka k1 = new Ksiazka();
+        System.out.println(k1.tytul);
+
+        Ksiazka k2 = new Ksiazka("Bill Gatsby", "FSJ", 1585);
+        System.out.println(k2.autor);
+
+
+//... dwa konstruktory, jeden przyjmujący wszystkie trzy parametry,
+//a drugi tylko imię i nazwisko. Drugi konstruktor powinien wywołać 
+//pierwszy, przekazując mu domyślną wartość wieku jako 0.
+public class Osoba {
+    public String imie;
+    public String nazwisko;
+    public int wiek;
+    public Osoba(String imie, String nazwisko, int wiek){
+        this.imie = imie;
+        this.nazwisko = nazwisko;
+        this.wiek = wiek;
+    }
+
+    public Osoba(String imie, String nazwisko){
+        this(imie, nazwisko, 0);
+    }
+}
+
+//run in main.java
+        Osoba o1 = new Osoba("Daryl", "Adams", 31);
+        System.out.println(o1.wiek);
+
+        Osoba o2 = new Osoba("Darcy", "Murphy");
+        System.out.println(o2.wiek);
+
+//Zaprojektuj klasę Kwadrat, która posiada pole bok oraz konstruktor, 
+//który umożliwia ustawienie wartości tego pola. Następnie napisz 
+//drugi konstruktor, który nie przyjmuje żadnych argumentów, a jedynie 
+//wywołuje pierwszy konstruktor z wartością domyślną 1
+public class Kwadrat {
+    public int bok;
+
+    public Kwadrat(int bok){
+        this.bok = bok;
+    }
+
+    public Kwadrat(){
+        this(1);
+    }
+}
+
+//wartosc niemutowalna - final
+public class Matematyka {
+    public static final double PI = 3.14159265359;//final - niemutowalna
+}
+
+//run in main.java
+        System.out.println("PI: " + Matematyka.PI);
+//        Matematyka.PI = 3;//nie zadziala bo jest niemutowalna
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

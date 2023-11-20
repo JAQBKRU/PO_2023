@@ -78,6 +78,6 @@ public class Main {
         Singleton singleton2 = Singleton.getInstance();
 
         if (singleton1 == singleton2) System.out.println("ta sama referencja");
-        else System.out.println("inna referencja");/*
+        else System.out.println("inna referencja");*/
     }
 }

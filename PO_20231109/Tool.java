@@ -1,12 +1,13 @@
 public class Tool {
-    protected String nazwa;
+    public String nazwa;
+
     protected Tool(String nazwa){
         this.nazwa = nazwa;
     }
 }
 
 class Hammer extends Tool{
-    protected Hammer(String nazwa) {
+    public Hammer(String nazwa) {
         super(nazwa);
     }
 }

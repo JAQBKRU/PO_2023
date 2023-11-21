@@ -1,3 +1,4 @@
+//Zadanie z 20231116
 import javax.xml.stream.events.Characters;
 import java.util.ArrayList;
 import java.util.Date;
@@ -9,7 +10,7 @@ public class Main {
         System.out.println(zad1.capitalizeEverySecond(sb));
 
         //zad 6
-        VehicleA car = new CarB();
+        Vehicle2 car = new Car3();
         car.drive();
 
         //Zad 7
@@ -37,13 +38,13 @@ class Student{
     public String lastName;
     public String fieldOfStudy;
 
-    public Student(String firstName, String lastName, String fieldOfStudy){
+    public Student(String firstName, String lastName, String fieldOfStudy) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.fieldOfStudy = fieldOfStudy;
     }
 
-    public Student(String firstName, String lastName){
+    public Student(String firstName, String lastName) {
         this(firstName, lastName, "unknown");
     }
 }
@@ -53,15 +54,15 @@ class Student{
 class Car{
     public String brand;
     public String model;
-    public int produtionYear;
+    public int productionYear;
 
-    public Car(String brand, String model, int produtionYear) {
+    public Car(String brand, String model, int productionYear) {
         this.brand = brand;
         this.model = model;
-        this.produtionYear = produtionYear;
+        this.productionYear = productionYear;
     }
 
-    public Car(String brand, String model){
+    public Car(String brand, String model) {
         this(brand, model, 2023);
     }
 }
@@ -72,15 +73,16 @@ class Vehicle{
     public String brand;
     public String model;
 
-    Vehicle(String brand, String model) {
+    public Vehicle(String brand, String model) {
         this.brand = brand;
         this.model = model;
     }
 }
 
-class CarA extends Vehicle{
+class Car2 extends Vehicle{
     public int numberOfDoors;
-    public CarA(String brand, String model, int numberOfDoors) {
+
+    public Car2(String brand, String model, int numberOfDoors) {
         super(brand, model);
         this.numberOfDoors = numberOfDoors;
     }
@@ -94,7 +96,6 @@ class CarA extends Vehicle{
     //Pola title i author nie powinny być puste ani równać się null. W przypadku podania pustego napisu lub null, ustaw odpowiednio pusty napis.
 //Dodaj metodę toString(), która zwraca informacje o książce w formacie: "Book: [title] by [author], Pages: [numberOfPages].".
 //Dodaj metodę equals(), która porównuje dwie książki na podstawie ich pól title, author i numberOfPages
-
 class Book{
     public String title;
     public String author;
@@ -104,13 +105,11 @@ class Book{
         if(numberOfPages < 0) this.numberOfPages = 1;
         else this.numberOfPages = numberOfPages;
 
-        if(title != null && !title.isEmpty() && author != null && !author.isEmpty()){
-            this.title = title;
-            this.author = author;
-        }else{
-            this.title = "";
-            this.author = "";
-        }
+        if(!title.isEmpty() && title != null) this.title = title;
+        else this.title = "";
+
+        if(!author.isEmpty() && author != null) this.author = title;
+        else this.author = "";
     }
 
     @Override
@@ -131,20 +130,17 @@ class Book{
 //Wykonaj kolejno poniższe czynności:
 //1.Stwórz klasę bazową Vehicle z metodą drive, która wypisuje “The vehicle is moving.”. Następnie stwórz klasę potomną Car, która nadopisuje metodę drive tak, by wypisywała “The car is moving.”. Utwórz obiekt klasy Car i wywołaj jego metodę drive, aby zaobserwować wynik.
 //2.Na bazie klasy Vehicle z poprzedniego podpunktu, w klasie Car, nadpisz metodę drive tak, by wywoływała oryginalną metodę z klasy bazowej i dodatkowo wypisywała informacje specyficzne dla klasy Car. Użyj słowa kluczowego super, aby wywołać metodę z klasy bazowej.
-class VehicleA{
+class Vehicle2{
     public void drive(){
         System.out.println("The vehicle is moving.");
     }
 }
 
-class CarB extends VehicleA{
-    @Override
+class Car3 extends Vehicle2{
     public void drive(){
         super.drive();
-        System.out.println("The car is moving.");
+        System.out.println("The Car is moving.");
     }
-
-
 }
 
 //Zad 7

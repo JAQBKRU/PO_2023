@@ -1,3 +1,5 @@
+import java.util.Objects;
+
 public class Book {
     public String title;
     public String author;
@@ -7,13 +9,11 @@ public class Book {
         if(numberOfPages < 0) this.numberOfPages = 1;
         else this.numberOfPages = numberOfPages;
 
-        if(title != null && !title.isEmpty() && author != null && !author.isEmpty()){
-            this.title = title;
-            this.author = author;
-        }else{
-            this.title = "";
-            this.author = "";
-        }
+        if(!title.isEmpty() && title != null) this.title = title;
+        else this.title = "";
+
+        if(!author.isEmpty() && author != null) this.author = title;
+        else this.author = "";
     }
 
     @Override
@@ -22,10 +22,8 @@ public class Book {
     }
 
     @Override
-    public boolean equals(Object other){
-        if(other instanceof Book o){
-            return this.title.equals(o.title) && this.author.equals(o.author) && this.numberOfPages == o.numberOfPages;
-        }
+    public boolean equals(Object o) {
+        if (o instanceof Book b) return this.title.equals(b.title);
         return false;
     }
 }

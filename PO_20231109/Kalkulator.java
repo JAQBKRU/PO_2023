@@ -5,7 +5,8 @@ public class Kalkulator {
 }
 
 class KalkulatorRozszerzony extends Kalkulator{
-    public int dodaj(int a, int b, int c) {
+    public int dodaj(int a, int b, int c){
         return a + b + c;
     }
 }
+

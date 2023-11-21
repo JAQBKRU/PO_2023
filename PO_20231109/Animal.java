@@ -14,9 +14,8 @@ public class Animal {
     public boolean equals(Object other){
         if(other instanceof Animal o){
             return this.nazwa.equals(o.nazwa);
-        }else{
-            return false;
         }
+        return false;
     }
 
     public void dajGlos(){
@@ -28,6 +27,7 @@ class Cat extends Animal{
     public Cat(){
 
     }
+
     public Cat(String nazwa) {
         super(nazwa);
     }
